@@ -4,35 +4,47 @@ import clase7.Articulo;
 
 public class Libro extends Articulo{
 
-	// atributos propios
+	//atributos propios
 	private String isbn;
+	
+	//creo para resolver clase9
+	public Libro() {
+		//¿como invoco al constructor del padre?
+		super(null, null, null, null, null);
+	}
 	
 	public Libro(Long id, String nombre, String autor, Double precio, String urlImagen, String isbn) {
 		super(id, nombre, autor, precio, urlImagen);
 		this.isbn = isbn;
 	}
-	// alt + shift+s genero get y set
 
+	//alt+shit+s
 	public String getIsbn() {
-		//logica control de null
+		//misma logica
 		return isbn;
 	}
 
 	public void setIsbn(String isbn) {
-		//logica control de null
+		//misma logica
 		this.isbn = isbn;
 	}
-/*	
-	@Override
+	/*
 	public void detalle() {
-		// le digo al padre qe haga lo suyo
+		//le digo al padre que hago lo que sabe hacer
 		super.detalle();
-		// ahora yo hijo, hago lo qe se hacer
-		System.out.println("isbn" + this.getIsbn());
+		
+		//ahora yo hijo, hago lo que se hacer
+		System.out.println("ISBN:" + this.getIsbn());
 	}
 	*/
-//libro esta obligando a implementar el metodo hijo() de la clase padre
+	//Libro esta obligado a implementar el metodo detalleHijo() de la clase padre.
 	public void detalleHijo() {
-		System.out.println("isbn" + this.getIsbn());
+		System.out.println("ISBN:" + this.getIsbn());
 	}
+
+	@Override
+	public String toString() {
+		return "Libro [isbn=" + isbn + "]";
+	}
+	
 }
