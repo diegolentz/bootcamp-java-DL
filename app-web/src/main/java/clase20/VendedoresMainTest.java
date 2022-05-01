@@ -20,7 +20,7 @@ public class VendedoresMainTest {
 		
 		//cargar para cada vendedor las ventas que tiene
 		for (Vendedor vendedor : vendedores) {
-			mapVentasXVendedor.put(vendedor, new ArrayList<>());
+			//mapVentasXVendedor.put(vendedor, new ArrayList<>());
 		}
 		
 		//TPH: investigar hashcode e equals

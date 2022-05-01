@@ -17,7 +17,7 @@ public class MainMap {
 	 */
 	public static void main(String[] args) {
 	
-		Integer opcionIngresadaPorUsuario = 1;
+		Integer opcionIngresadaPorUsuario = 3;
 		
 		// Interface i = new ClaseQueImplementaLaInterface();		
 		IAccion accion = AccionMap.getAccion(opcionIngresadaPorUsuario);//AltaAccion|BajaAccion|AccionDefault
