@@ -1,16 +1,20 @@
 package clase19;
 
+import Excepcionese.ErrorBorrar;
 import clase7.Articulo;
 
 public class AccionBaja implements IAccion {
 	
 	@Override
-	public void exec(Articulo ctx) {
+	public void exec(Articulo art) {
 		
-		//dar de baja por id
-		InMemoryDB.delete(ctx.getId());
+		try {
+			InMemoryDB.delete(art.getId());
+		} catch (ErrorBorrar e) {
+			e.printStackTrace();
+		}
 		
-		System.out.println("Se ha elminado el articulo de id:" + ctx.getId());
+		System.out.println("Articulo con id: " + art.getId() + " eliminado");
 	}
 
 }

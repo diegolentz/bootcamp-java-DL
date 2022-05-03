@@ -2,6 +2,7 @@ package clase19;
 
 import java.util.Scanner;
 
+import Excepcionese.*;
 import clase10.Libro;
 import clase7.Articulo;
 
@@ -17,23 +18,57 @@ public class MainMap {
 	 */
 	public static void main(String[] args) {
 	
-		Integer opcionIngresadaPorUsuario = 3;
+		Integer opcionIngresadaPorUsuario = 1;
 		
 		// Interface i = new ClaseQueImplementaLaInterface();		
 		IAccion accion = AccionMap.getAccion(opcionIngresadaPorUsuario);//AltaAccion|BajaAccion|AccionDefault
 		
 		Articulo articulo = contruirArticulo();
 		
-		//ejecuto
-		InMemoryDB.listAll();
+		try {
+			InMemoryDB.listAll();
+		}catch(NullPointerException e) {
+			e.printStackTrace();
+		} catch (ClassCastException e) {
+			
+		} catch (ErrorListarTodo e) {}
+		try {
+			accion.exec(articulo);
+		}catch(ErrorBorrar | ErrorGuardar | ErrorListarTodo | ErrorObtenerValor | ErrorSubida e) {
+			e.printStackTrace();
+		}
+
+		try {
+			InMemoryDB.listAll();
+		}catch(NullPointerException e) {
+			e.printStackTrace();
+		} catch (ClassCastException e) {
+			
+		} catch (ErrorListarTodo e) {}
 		
-		accion.exec(articulo);
+		try {
+			InMemoryDB.delete(articulo.getId());
+		} catch (UnsupportedOperationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassCastException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ErrorBorrar e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		InMemoryDB.listAll();
-		
-		InMemoryDB.delete(articulo.getId());
-		
-		InMemoryDB.listAll();
+		try {
+			InMemoryDB.listAll();
+		}catch(NullPointerException e) {
+			e.printStackTrace();
+		} catch (ClassCastException e) {
+			
+		} catch (ErrorListarTodo e) {}
 	}
 
 	private static Articulo contruirArticulo() {
