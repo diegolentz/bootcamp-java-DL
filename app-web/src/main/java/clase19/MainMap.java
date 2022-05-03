@@ -49,16 +49,12 @@ public class MainMap {
 		try {
 			InMemoryDB.delete(articulo.getId());
 		} catch (UnsupportedOperationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassCastException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NullPointerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ErrorBorrar e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -79,10 +75,8 @@ public class MainMap {
 		System.out.println("Ingrese id ");
 		art.setId(teclado.nextLong());
 		
-		//downcating
 		System.out.println("Ingrese isbn");
 		((Libro)art).setIsbn(teclado.next());
-		//completar los demas datos
 		teclado.close();
 		return art;
 	}

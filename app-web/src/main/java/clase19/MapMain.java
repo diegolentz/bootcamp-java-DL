@@ -36,57 +36,29 @@ public class MapMain {
 		System.out.println("El sabado " + existe);
 		existe = mapSemana.containsKey(8);
 		System.out.println("El dia 8 " + existe);
-		
-		//eliminar una clave-valor
-		
 		String value = mapSemana.remove(3);//quitar del mapa 3-Miercoles
 		System.out.println(mapSemana);
-		
-		//vaciar el mapa
-		//mapSemana.clear();
-		
-		//System.out.println(mapSemana);
-
-		//la calve debe ser unica
 		mapSemana.put(5, "VALOR NUEVO");
 		System.out.println(mapSemana);
-		
 		mapSemana.replace(6, "SATURDAY");
 		System.out.println(mapSemana);
-
-		//obtener las claves del mapa
 		Set<Integer> keys = mapSemana.keySet();
 		System.out.println("claves del mapa: " + keys);
-		
-		//obtengo los valores del mapa
 		Collection<String> values = mapSemana.values();
 		System.out.println("valores del mapa: " + keys);
-
-		//recorrer el mapa usando sus claves
 		for(Integer oneKey : keys) {
 			String oneValue = mapSemana.get(oneKey);
 			System.out.println("key: " + oneKey + " value: " +oneValue);
-			// mapSemana.put(oneKey*10, value + "-"+ oneKey);
 		}
-		
 		System.out.println(mapSemana);
-		
-		//recorrido por valores
 		for(String oneValue : values) {
 			System.out.println("value: " + oneValue);
 		}
-		
-		//Map.Entry<K,V>
 		Set<Map.Entry<Integer, String>> entrySet = mapSemana.entrySet();
-		
-		//recorrer las entradas de un mapa usando Entry
 		for(Map.Entry<Integer, String> oneEntry : entrySet) {
 			Integer oneKey = oneEntry.getKey();
 			String oneValue = oneEntry.getValue();
-			
 			System.out.println(oneKey + " - " +oneValue);
 		}
-		
 	}
-
 }
