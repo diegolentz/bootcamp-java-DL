@@ -22,8 +22,10 @@ public class Alumno {
 		Scanner teclado = new Scanner(System.in);
 		int cant_notas;
 		double suma = 0, nota;
+		
 		System.out.println("ingrese la cantidad de notas del alumno");
 		cant_notas = teclado.nextInt();
+		
 		for(int i = 0; i < cant_notas; i++) {
 			System.out.println("ingrese una nota");
 			nota = teclado.nextDouble();

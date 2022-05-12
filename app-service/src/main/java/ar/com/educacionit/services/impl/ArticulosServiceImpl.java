@@ -3,6 +3,7 @@ package ar.com.educacionit.services.impl;
 import java.util.List;
 
 import ar.com.educacionit.daos.ArticuloDao;
+import ar.com.educacionit.daos.db.exceptions.DuplicatedException;
 import ar.com.educacionit.daos.db.exceptions.GenericException;
 import ar.com.educacionit.daos.impl.ArticuloDaoMysqlImpl;
 import ar.com.educacionit.domain.Articulo;
@@ -21,6 +22,7 @@ public class ArticulosServiceImpl implements ArticulosService {
 		this.dao = new ArticuloDaoMysqlImpl();
 	}
 	
+	@Override
 	public Articulo getById(Long id) throws ServiceException {
 		try {
 			return dao.getByPK(id);
@@ -28,7 +30,17 @@ public class ArticulosServiceImpl implements ArticulosService {
 			throw new ServiceException("Error al consutlar articulo",e);
 		}
 	}
+	
+	@Override
+	public Articulo getByCodigo(String codigo) throws ServiceException {
+		try {
+			return dao.getByCode(codigo);
+		} catch (GenericException e) {			
+			throw new ServiceException("Error al consutlar articulo",e);
+		}
+	}
 
+	@Override
 	public void deleteArticulo(Long id) throws ServiceException {
 		try {
 			dao.delete(id);
@@ -37,6 +49,7 @@ public class ArticulosServiceImpl implements ArticulosService {
 		}				
 	}
 
+	@Override
 	public void updateArticulo(Articulo entity) throws ServiceException {
 		try {
 			dao.update(entity);
@@ -45,6 +58,7 @@ public class ArticulosServiceImpl implements ArticulosService {
 		}		
 	}
 	
+	@Override
 	public List<Articulo> obtenerTodos() throws ServiceException {
 		try {
 			return dao.findAll();
@@ -53,4 +67,12 @@ public class ArticulosServiceImpl implements ArticulosService {
 		}
 	}
 
+	@Override
+	public void createArticulo(Articulo nuevo) throws ServiceException {
+		try {
+			dao.save(nuevo);
+		} catch (GenericException | DuplicatedException e) {			
+			throw new ServiceException("Error creando articulos",e);
+		}
+	}
 }
