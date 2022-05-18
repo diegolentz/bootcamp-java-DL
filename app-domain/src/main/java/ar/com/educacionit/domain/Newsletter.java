@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class Newsletter {
 
-	private int id;
+	private Long id;
 	private String email;
 	private Date fechaRegistro;
-	
 }
