@@ -1,4 +1,4 @@
-package Actividad2;
+package practica.adicional.semana3;
 
 import java.util.Scanner;
 
