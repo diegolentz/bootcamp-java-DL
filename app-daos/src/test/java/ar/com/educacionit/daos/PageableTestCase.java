@@ -1,4 +1,4 @@
-package ar.com.educacionit.web.controllers;
+package ar.com.educacionit.daos;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import ar.com.educacionit.services.ArticulosService;
 import ar.com.educacionit.services.exceptions.ServiceException;
 import ar.com.educacionit.services.impl.ArticulosServiceImpl;
 
-public class ArticuloController {
+public class PageableTestCase {
 
 	public static void main(String[] args) {
 		
