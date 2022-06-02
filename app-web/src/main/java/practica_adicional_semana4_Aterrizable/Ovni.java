@@ -1,4 +1,4 @@
-package Actividad3;
+package practica_adicional_semana4_Aterrizable;
 
 public class Ovni extends Volador  {
 	private Integer peso;
