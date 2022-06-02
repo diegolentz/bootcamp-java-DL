@@ -1,4 +1,4 @@
-package practica_adicional_semana2_validacionFecha;
+package practica_adicional_semana2_ValidacionFecha;
 
 import java.util.Scanner;
 

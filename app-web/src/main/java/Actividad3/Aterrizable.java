@@ -1,4 +1,4 @@
-package practica_adicional_semana4_Aterrizable;
+package Actividad3;
 
 public interface Aterrizable {
 
