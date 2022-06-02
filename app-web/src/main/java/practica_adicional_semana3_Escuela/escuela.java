@@ -1,6 +1,6 @@
 package practica_adicional_semana3_Escuela;
 
-/*"Crear un branch con el nombre practica-adicional-semana3:
+/*
              La idea es practicar ciclos, dobles con vectores, máximo, mínimo, promedio.
              realizar el siguiente ejercicios:
              La escuela primaria xyz solicita el desarrollo de una aplicación para poder llevar el control de notas para cada alumno.
